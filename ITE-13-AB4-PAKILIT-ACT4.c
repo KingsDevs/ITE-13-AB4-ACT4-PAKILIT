@@ -78,10 +78,15 @@ int main()
     deducted_incentive = incentive - tax_deduction;
 
     printf("Employee Name: %s\n", name);
-
-    
-    
-
-    
+    printf("Years of Experience: %d\n", experience);
+    if(experience < 5)
+    {
+        printf("1st Month Overtime: %d\n", three_month_ovrtm[0]);
+        printf("2nd Month Overtime: %d\n", three_month_ovrtm[1]);
+        printf("3rd Month Overtime: %d\n", three_month_ovrtm[2]);
+    }
+    printf("Tax deduction: %f\n", tax_deduction);
+    printf("Not deducted incentive: %f\n", incentive);
+    printf("Deducted Incentive: %f\n", deducted_incentive);
 
 }
