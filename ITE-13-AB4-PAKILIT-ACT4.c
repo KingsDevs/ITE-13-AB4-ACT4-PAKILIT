@@ -92,4 +92,5 @@ int main()
     printf("Not deducted incentive: %.2f\n", incentive);
     printf("Deducted Incentive: %.2f\n", deducted_incentive);
 
+    return 0;
 }
