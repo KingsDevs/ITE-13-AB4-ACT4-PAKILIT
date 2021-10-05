@@ -1,5 +1,5 @@
 #include<stdio.h>
-
+#include<math.h>
 
 int main()
 {
@@ -58,6 +58,8 @@ int main()
         
     }
 
+    incentive = roundf(incentive);
+
     if (incentive >= 75000)
     {
         tax_deduction = incentive * 0.1;
@@ -76,6 +78,7 @@ int main()
     }
     
     deducted_incentive = incentive - tax_deduction;
+    deducted_incentive = roundf(deducted_incentive);
 
     printf("Employee Name: %s\n", name);
     printf("Years of Experience: %d\n", experience);
@@ -85,8 +88,8 @@ int main()
         printf("2nd Month Overtime: %d\n", three_month_ovrtm[1]);
         printf("3rd Month Overtime: %d\n", three_month_ovrtm[2]);
     }
-    printf("Tax deduction: %f\n", tax_deduction);
-    printf("Not deducted incentive: %f\n", incentive);
-    printf("Deducted Incentive: %f\n", deducted_incentive);
+    printf("Tax deduction: %.2f\n", tax_deduction);
+    printf("Not deducted incentive: %.2f\n", incentive);
+    printf("Deducted Incentive: %.2f\n", deducted_incentive);
 
 }
