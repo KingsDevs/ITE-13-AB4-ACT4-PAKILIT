@@ -5,9 +5,9 @@ int main()
 {
     char * name[100];
     int experience;
-    float incentive;
+    float incentive, avg_ovrtm, tax_deduction, deducted_incentive;
     int three_month_ovrtm[3];
-    float avg_ovrtm;
+    
 
     printf("Enter your name\n>> ");
     scanf("%[^\n]", name);
@@ -57,7 +57,31 @@ int main()
         }
         
     }
-    printf("%f", incentive);
+
+    if (incentive >= 75000)
+    {
+        tax_deduction = incentive * 0.1;
+    }
+    else if (incentive >= 50000)
+    {
+        tax_deduction = incentive * 0.07;
+    }
+    else if (incentive >= 20000)
+    {
+        tax_deduction = incentive * 0.05;
+    }
+    else
+    {
+        tax_deduction = incentive * 0.03;
+    }
+    
+    deducted_incentive = incentive - tax_deduction;
+
+    printf("Employee Name: %s\n", name);
+
+    
+    
+
     
 
 }
