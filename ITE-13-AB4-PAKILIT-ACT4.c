@@ -3,8 +3,13 @@
 
 int main()
 {
-    int experience, overtime, incentive;
-    printf("Enter your year of Experience: ");
+    char * name[100];
+    int experience, incentive;
+
+    printf("Enter your name\n>> ");
+    scanf("%[^\n]", name);
+    printf("%s" , name);
+    printf("Enter your year of Experience\n>> ");
     scanf("%d", &experience);
 
     if(experience > 20)
@@ -21,6 +26,12 @@ int main()
     }
     else
     {
+        int three_month_ovrtm[3];
+        float avg_ovrtm;
+        printf("Enter Overtime in Past 3 Months: ");
+        scanf("%d%d%d", &three_month_ovrtm[0], &three_month_ovrtm[1], &three_month_ovrtm[2]);
+
+        avg_ovrtm = (three_month_ovrtm[0] + three_month_ovrtm[1] + three_month_ovrtm[2]) / 3;
 
     }
     //printf("%d", incentive);
