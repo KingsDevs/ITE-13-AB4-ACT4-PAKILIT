@@ -15,7 +15,7 @@ int main() // this function will be called by the OS once the user runs the prog
         incentive = total incentive not deducted by tax
         avg_ovrtm = the average overtime of the employee
         tax_deduction = the value deducted to incentive
-        deducted_incentive = total incentive the employee will deducted by tax
+        deducted_incentive = total incentive deducted by tax
     */
     float incentive, avg_ovrtm, tax_deduction, deducted_incentive;
     /*
