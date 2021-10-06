@@ -1,16 +1,21 @@
+/*
+    Name: Karl Shane Pakilit
+    Section: AB4
+*/
+
 #include<stdio.h> //this file has input and output that I will use throughout the program
 #include<math.h>// this file has math related function that I will use to this program especially to roundf
 
 int main() // this function will be called by the OS once the user runs the program
 {
-    char name[100]; //this array of characters will store the name of employee
+    
     int experience; // this integer variable will store the year of experience of employee
           
     /* this four floating point variables will store the following
-        incentive = not deducted incentive
+        incentive = total incentive not deducted by tax
         avg_ovrtm = the average overtime of the employee
         tax_deduction = the value deducted to incentive
-        deducted_incentive = deducted incentive
+        deducted_incentive = total incentive the employee will deducted by tax
     */
     float incentive, avg_ovrtm, tax_deduction, deducted_incentive;
     /*
@@ -21,8 +26,7 @@ int main() // this function will be called by the OS once the user runs the prog
     */
     int three_month_ovrtm[3]; 
     
-    printf("Enter your name\n>> "); // prompts the user the enter its name
-    scanf("%[^\n]", name); // get the inputted name from user and store it to name
+    
     printf("Enter your year of Experience\n>> "); //prompts the user to enter the year of experience
     scanf("%d", &experience); // get the inputted year from the user and store it to experience
 
@@ -91,23 +95,7 @@ int main() // this function will be called by the OS once the user runs the prog
     deducted_incentive = incentive - tax_deduction; //subtract incentive by tax_deduction
     deducted_incentive = roundf(deducted_incentive); //rounds deducted_incentive
 
-    printf("Employee Name: %s\n", name); //outputs the name
-    printf("Years of Experience: %d", experience); //outputs the years of experience
-    if(experience > 1) //if experience is greater than 1 print years and newline
-        printf(" years\n");
-    else //if not print year and newline
-        printf(" year\n");
-    
-    if(experience < 5) // if experience is less than to 5 then ...
-    {
-        printf("1st Month Overtime: %d\n", three_month_ovrtm[0]); //ouputs the 1st month overtime
-        printf("2nd Month Overtime: %d\n", three_month_ovrtm[1]); //ouputs the 2nd month overtime
-        printf("3rd Month Overtime: %d\n", three_month_ovrtm[2]); //ouputs the 3rd month overtime
-    }
-    //output the tax deduction percentage by dividing tax deduction to incentive then multiplied it by 100
-    printf("Tax deduction: %.1f%% \n", (tax_deduction / incentive) * 100); 
-    printf("Not deducted incentive: %.2f\n", incentive); // outputs the incentive
-    printf("Deducted Incentive: %.2f\n", deducted_incentive); //outputs the deducted_incentive
+    printf("Total Incentive: %.2f\n", deducted_incentive); //outputs the deducted_incentive which is the total incentive 
 
     return 0; //return 0 by main function
 }
