@@ -1,14 +1,26 @@
-#include<stdio.h>
-#include<math.h>
+#include<stdio.h> //this file has input and output that I will use throughout the program
+#include<math.h>// this file has math related function that I will use to this program especially to roundf
 
-int main()
+int main() // this function will be called by the OS once the user runs the program
 {
-    char * name[100];
-    int experience;
+    char name[100]; //this array of characters will store the name of employee
+    int experience; // this integer variable will store the year of experience of employee
+          
+    /* this four floating point variables will store the 
+        incentive = not deducted incentive
+        avg_ovrtm = the average overtime of the employee
+        tax_deduction = the value deducted to incentive
+        deducted_incentive = deducted incentive
+    */
     float incentive, avg_ovrtm, tax_deduction, deducted_incentive;
-    int three_month_ovrtm[3];
+    /*
+        this array of integer three_month_ovrtm stores the total overtime of last three months
+        Index 0 = first month
+        Index 1 = second month
+        Index 2 = third month
+    */
+    int three_month_ovrtm[3]; 
     
-
     printf("Enter your name\n>> ");
     scanf("%[^\n]", name);
     printf("Enter your year of Experience\n>> ");
