@@ -88,7 +88,7 @@ int main()
         printf("2nd Month Overtime: %d\n", three_month_ovrtm[1]);
         printf("3rd Month Overtime: %d\n", three_month_ovrtm[2]);
     }
-    printf("Tax deduction: %.2f\n", tax_deduction);
+    printf("Tax deduction: %.1f%% \n", (tax_deduction / incentive) * 100);
     printf("Not deducted incentive: %.2f\n", incentive);
     printf("Deducted Incentive: %.2f\n", deducted_incentive);
 
