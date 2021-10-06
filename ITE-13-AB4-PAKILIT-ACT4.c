@@ -6,7 +6,7 @@ int main() // this function will be called by the OS once the user runs the prog
     char name[100]; //this array of characters will store the name of employee
     int experience; // this integer variable will store the year of experience of employee
           
-    /* this four floating point variables will store the 
+    /* this four floating point variables will store the following
         incentive = not deducted incentive
         avg_ovrtm = the average overtime of the employee
         tax_deduction = the value deducted to incentive
@@ -21,88 +21,93 @@ int main() // this function will be called by the OS once the user runs the prog
     */
     int three_month_ovrtm[3]; 
     
-    printf("Enter your name\n>> ");
-    scanf("%[^\n]", name);
-    printf("Enter your year of Experience\n>> ");
-    scanf("%d", &experience);
+    printf("Enter your name\n>> "); // prompts the user the enter its name
+    scanf("%[^\n]", name); // get the inputted name from user and store it to name
+    printf("Enter your year of Experience\n>> "); //prompts the user to enter the year of experience
+    scanf("%d", &experience); // get the inputted year from the user and store it to experience
 
-    if(experience > 20)
+    if(experience > 20) // if experience is greater than 20 then...
     {
-        incentive = experience * 4000;
+        incentive = experience * 4000; // multiply experience by 4000 and store it in incentive
     }
-    else if(experience > 10)
+    else if(experience > 10) // if experience is greater than 10 then...
     {
-        incentive = experience * 3000;
+        incentive = experience * 3000; // multiply experience by 3000 and store it in incentive
     }
-    else if (experience >= 5)
+    else if (experience >= 5) // if experience is greater than or equal to 5 then...
     {
-        incentive = experience * 2000;
+        incentive = experience * 2000; // multiply experience by 2000 and store it in incentive
     }
-    else
-    {
+    else // if non of the condition is met this will be executed
+    {    
+        printf("Enter total Overtime in 1st Month\n>> "); // prompts the user to enter the total overtime in the first month
+        scanf("%d", &three_month_ovrtm[0]); //get the inputted first month total overtime and stored to three_month_ovrtm index 0
+        printf("Enter total Overtime in 2nd Month\n>> "); // prompts the user to enter the total overtime in the second month
+        scanf("%d", &three_month_ovrtm[1]); //get the inputted second month total overtime and stored to three_month_ovrtm index 1
+        printf("Enter total Overtime in 3rd Month\n>> "); // prompts the user to enter the total overtime in the third month
+        scanf("%d", &three_month_ovrtm[2]); //get the inputted third month total overtime and stored to three_month_ovrtm index 2
         
-        
-        printf("Enter total Overtime in 1st Month\n>> ");
-        scanf("%d", &three_month_ovrtm[0]);
-        printf("Enter total Overtime in 2nd Month\n>> ");
-        scanf("%d", &three_month_ovrtm[1]);
-        printf("Enter total Overtime in 3rd Month\n>> ");
-        scanf("%d", &three_month_ovrtm[2]);
-        
+        // adds the total three month and cast it to float then divide by 3 after that stores it to avg_ovrtm
         avg_ovrtm = (float)(three_month_ovrtm[0] + three_month_ovrtm[1] + three_month_ovrtm[2]) / 3;
 
-        if(avg_ovrtm > 4)
+        if(avg_ovrtm > 4) // if avg_ovrtm is greater than 4 then...
         {
-            incentive = avg_ovrtm * 2000;
+            incentive = avg_ovrtm * 2000; // multiply avg_ovrtm to 2000 and store it to incentive
         }
-        else if(avg_ovrtm > 3)
+        else if(avg_ovrtm > 3) // if avg_ovrtm is greater than 3 then...
         {
-            incentive = avg_ovrtm * 1500;
+            incentive = avg_ovrtm * 1500; // multiply avg_ovrtm to 1500 and store it to incentive
         }
-        else if(avg_ovrtm > 2)
+        else if(avg_ovrtm > 2) // if avg_ovrtm is greater than 2 then...
         {
-            incentive = avg_ovrtm * 1000;
+            incentive = avg_ovrtm * 1000; // multiply avg_ovrtm to 1000 and store it to incentive
         }
-        else
+        else // if non of the condition is met this will be executed
         {
-            incentive = avg_ovrtm * 500;
+            incentive = avg_ovrtm * 500; // multiply avg_ovrtm to 500 and store it to incentive
         }
         
     }
 
-    incentive = roundf(incentive);
+    incentive = roundf(incentive); // rounds the incentive
 
-    if (incentive >= 75000)
+    if (incentive >= 75000) // if incentive is greater than or equal to 75000 then ...
     {
-        tax_deduction = incentive * 0.1;
+        tax_deduction = incentive * 0.1; // multiply incentive by 0.1 or 10% and store it to tax_deduction
     }
-    else if (incentive >= 50000)
+    else if (incentive >= 50000) // if incentive is greater than or equal to 50000 then ...
     {
-        tax_deduction = incentive * 0.07;
+        tax_deduction = incentive * 0.07; // multiply incentive by 0.07 or 7% and store it to tax_deduction
     }
-    else if (incentive >= 20000)
+    else if (incentive >= 20000) // if incentive is greater than or equal to 20000 then ...
     {
-        tax_deduction = incentive * 0.05;
+        tax_deduction = incentive * 0.05;  // multiply incentive by 0.05 or 5% and store it to tax_deduction
     }
-    else
+    else // if non of the condition is met this will be executed
     {
-        tax_deduction = incentive * 0.03;
+        tax_deduction = incentive * 0.03;  // multiply incentive by 0.03 or 3% and store it to tax_deduction
     }
     
-    deducted_incentive = incentive - tax_deduction;
-    deducted_incentive = roundf(deducted_incentive);
+    deducted_incentive = incentive - tax_deduction; //subtract incentive by tax_deduction
+    deducted_incentive = roundf(deducted_incentive); //rounds deducted_incentive
 
-    printf("Employee Name: %s\n", name);
-    printf("Years of Experience: %d\n", experience);
-    if(experience < 5)
+    printf("Employee Name: %s\n", name); //outputs the name
+    printf("Years of Experience: %d", experience); //outputs the years of experience
+    if(experience > 1) //if experience is greater than 1 print years and newline
+        printf(" years\n");
+    else //uf not print year and newline
+        printf(" year\n");
+    
+    if(experience < 5) // if experience is less than to 5 then ...
     {
-        printf("1st Month Overtime: %d\n", three_month_ovrtm[0]);
-        printf("2nd Month Overtime: %d\n", three_month_ovrtm[1]);
-        printf("3rd Month Overtime: %d\n", three_month_ovrtm[2]);
+        printf("1st Month Overtime: %d\n", three_month_ovrtm[0]); //ouputs the 1st month overtime
+        printf("2nd Month Overtime: %d\n", three_month_ovrtm[1]); //ouputs the 2nd month overtime
+        printf("3rd Month Overtime: %d\n", three_month_ovrtm[2]); //ouputs the 3rd month overtime
     }
-    printf("Tax deduction: %.1f%% \n", (tax_deduction / incentive) * 100);
-    printf("Not deducted incentive: %.2f\n", incentive);
-    printf("Deducted Incentive: %.2f\n", deducted_incentive);
+    //output the tax deduction percentage by dividing tax deduction to incentive then multiplied it by 100
+    printf("Tax deduction: %.1f%% \n", (tax_deduction / incentive) * 100); 
+    printf("Not deducted incentive: %.2f\n", incentive); // outputs the incentive
+    printf("Deducted Incentive: %.2f\n", deducted_incentive); //outputs the deducted_incentive
 
-    return 0;
+    return 0; //return 0 by main function
 }
