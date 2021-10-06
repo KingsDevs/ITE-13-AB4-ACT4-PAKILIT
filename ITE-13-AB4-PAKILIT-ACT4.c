@@ -97,5 +97,5 @@ int main() // this function will be called by the OS once the user runs the prog
 
     printf("Total Incentive: %.2f\n", deducted_incentive); //outputs the deducted_incentive which is the total incentive 
 
-    return 0; //return 0 by main function
+    return 0; //return value of main function
 }
