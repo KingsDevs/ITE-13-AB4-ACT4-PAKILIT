@@ -95,7 +95,7 @@ int main() // this function will be called by the OS once the user runs the prog
     printf("Years of Experience: %d", experience); //outputs the years of experience
     if(experience > 1) //if experience is greater than 1 print years and newline
         printf(" years\n");
-    else //uf not print year and newline
+    else //if not print year and newline
         printf(" year\n");
     
     if(experience < 5) // if experience is less than to 5 then ...
