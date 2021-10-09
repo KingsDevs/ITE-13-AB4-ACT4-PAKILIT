@@ -4,7 +4,7 @@
 */
 
 #include<stdio.h> //this file has input and output that I will use throughout the program
-#include<math.h>// this file has math related function that I will use to this program especially to roundf
+// #include<math.h>// this file has math related function that I will use to this program especially to roundf
 
 int main() // this function will be called by the OS once the user runs the program
 {
@@ -73,7 +73,7 @@ int main() // this function will be called by the OS once the user runs the prog
         
     }
 
-    incentive = roundf(incentive); // rounds the incentive
+    //incentive = roundf(incentive); // rounds the incentive
 
     if (incentive >= 75000) // if incentive is greater than or equal to 75000 then ...
     {
@@ -93,9 +93,8 @@ int main() // this function will be called by the OS once the user runs the prog
     }
     
     deducted_incentive = incentive - tax_deduction; //subtract incentive by tax_deduction
-    deducted_incentive = roundf(deducted_incentive); //rounds deducted_incentive
+   // deducted_incentive = roundf(deducted_incentive); //rounds deducted_incentive
 
     printf("Total Incentive: %.2f\n", deducted_incentive); //outputs the deducted_incentive which is the total incentive 
-
-    return 0; //return value of main function
+    return 0; //return value 
 }
